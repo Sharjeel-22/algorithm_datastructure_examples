@@ -72,21 +72,34 @@ you can read how to implement it here - https://www.khanacademy.org/computing/co
 and here - https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/
 */
 
+// function binarySearch(arrays,value) {
+//     let start = 0;
+//     let end = arrays.length -1;
+//     let middle = Math.floor((start + end) / 2)
+
+//     while(arrays[middle] !== value) {
+//         console.log(start,middle,end)
+//         if(value < arrays[middle]) {
+//             end = middle -1;
+//         }else{
+//             start = middle + 1;
+//         }
+//         middle = Math.floor((start + end) / 2);
+//     }
+//     console.log(start,middle,end);
+//     return middle;
+// }
+// binarySearch([1,2,3,4,5],2)
+
 function binarySearch(arrays,value) {
     let start = 0;
     let end = arrays.length -1;
     let middle = Math.floor((start + end) / 2)
-
-    while(arrays[middle] !== value) {
-        console.log(start,middle,end)
-        if(value < arrays[middle]) {
-            end = middle -1;
-        }else{
-            start = middle + 1;
-        }
+    while(arrays[middle]  !== value && start <= end) {
+        if(value < arrays[middle]) end = middle -1;
+        else start = middle + 1;
         middle = Math.floor((start + end) / 2);
     }
-    console.log(start,middle,end);
-    return middle;
+    return arrays[middle] === value ? middle:-1;
 }
-binarySearch([1,2,3,4,5],2)
+console.log(binarySearch([2,5,6,9,13,15,28,30],30));

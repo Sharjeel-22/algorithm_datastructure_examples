@@ -82,12 +82,12 @@ Don't use indexOf to implement this function!
 function linearSearch(names,value) {
 for (let i = 0 ;i < names.length;i++){
   if(names[i] === value) {
-    console.log(i);
-    return;
+    return i;
   }
 }
-console.log("-1");
+return -1;
 }
+console.log(linearSearch([34,56,1,2],1))
 linearSearch(states,"Texas");
 linearSearch([10, 15, 20, 25, 30], 15) // 1
 linearSearch([9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 4) // 5
